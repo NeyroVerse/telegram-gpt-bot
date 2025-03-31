@@ -47,9 +47,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     results = search_table(parsed)
     if results:
         for row in results:
-            msg = f"🎤 *{row['Пользователь']}*
-🗂️ {row['Тема выступления']}
-📎 {row['Ссылка на базу знаний']}"
+            msg = f"🎤 *{row['Пользователь']}*\n🗂️ {row['Тема выступления']}\n📎 {row['Ссылка на базу знаний']}"
             await update.message.reply_text(msg, parse_mode="Markdown")
     else:
         await update.message.reply_text("😕 Ничего не найдено.")
